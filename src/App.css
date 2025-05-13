@@ -107,7 +107,7 @@ nav img {
 }
 
 .DeanWords>h2,
-.DeanWords>h3 {
+.DeanWords>h4 {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -118,7 +118,7 @@ nav img {
   font-weight: 600;
 }
 
-.DeanWords>h3 {
+.DeanWords>h4 {
   color: #3e3e3e;
   font-weight: 600;
 }
@@ -143,6 +143,21 @@ nav img {
 
 .accordion-collapse {
   background-color: #f5f5f5;
+}
+
+/* Footer */
+
+.footer {
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5rem 5rem 0 0 ;
+  padding: 5%;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 
@@ -368,120 +383,13 @@ h3 {
   background-image: url("../HomepageSection/HomepageAssets/About-Icon.png");
 }
 
-/*Facilities section*/
-.facilites {
-  width: 80%;
-  margin: auto;
-  text-align: center;
-  padding-top: 100px;
-}
-
-.facilities-col {
-  flex-basis: 31%;
-  border-radius: 10px;
-  margin-bottom: 5%;
-  text-align: left;
-}
-
-.facilities-col img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/*testimonials*/
-.testi {
-  width: 80%;
-  margin: auto;
-  text-align: center;
-  padding-top: 100px;
-}
-
-.testi-col {
-  flex-basis: 44%;
-  border-radius: 10px;
-  margin-bottom: 5%;
-  text-align: left;
-  background-color: #fff3f3;
-  padding: 25px;
-  cursor: pointer;
-  display: flex;
-}
-
-.testi-col img {
-  height: 60px;
-  margin-left: 5px;
-  margin-right: 30px;
-  border-radius: 50%;
-}
-
-.testi-col p {
-  padding: 0;
-}
-
-.testi-col h3 {
-  margin-top: 15px;
-  text-align: left;
-}
-
-.testi-col .fa {
-  color: #f44336;
-}
-
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
   .testi-col img {
     margin-left: 0px;
     margin-right: 30px;
   }
 }
-
-/*CTA section */
-.cta {
-  margin: 100px auto;
-  width: 80%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(./assets/banner2.jpg);
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-  padding: 100px 0;
-  border-radius: 20px;
-}
-
-.cta h1 {
-  color: #fff;
-  margin-bottom: 40px;
-  padding: 0;
-}
-
-@media (max-width: 700px) {
-  .cta h1 {
-    font-size: 24px;
-  }
-}
-
-/* footer */
-.footer {
-  width: 100%;
-  text-align: center;
-  padding: 30px 0;
-}
-
-.footer h4 {
-  margin-bottom: 25px;
-  margin-top: 20px;
-  font-weight: 600;
-}
-
-.icons .fa {
-  color: #f44336;
-  margin: 0 13px;
-  cursor: pointer;
-  padding: 18px 0;
-}
-
-.fa-heart {
-  color: #f44336;
-}
+  */
 
 /*****ABOUT US PAGE********/
 .sub-header {

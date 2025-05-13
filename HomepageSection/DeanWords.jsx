@@ -7,7 +7,7 @@ export default function DeanWords() {
         <div className="DeanWords">
             <img src={Dean} alt="DeansWords"></img>
             <h2>Dr. Abdul Hafid Bukhari</h2>
-            <h3>Dean of the Faculty of Engineering Sciences</h3>
+            <h4>Dean of the Faculty of Engineering Sciences</h4>
             <p>The Faculty of Engineering Sciences in Brega was established in 2015, and since its inception until today, the college has continuously strived with determined and vigorous steps to reach the highest ranks in terms of educational excellence. This pursuit is driven by our deep belief in our noble educational and training mission, which we see bearing fruit in our students in the best possible way.</p>
 
             <p>The first challenge lies in the college’s focus on the quality of education in all its aspects, adopting new plans and updating old ones, while relying on educational programs with a strong scientific foundation—programs that qualify graduates to become highly competent engineers capable of competing in the job market and serving in all oil institutions and other government sectors, in accordance with international standards.</p>

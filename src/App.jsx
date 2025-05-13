@@ -12,7 +12,7 @@ import cafeteriaImg from './assets/cafeteria.png';
 import user1Img from './assets/user1.jpg';
 import user2Img from './assets/user2.jpg';
 import AccordianSection from '../HomepageSection/AccordianSection.jsx';
-
+import Footer from '../HomepageSection/Footer.jsx'
 
 function App() {
 
@@ -34,60 +34,7 @@ function App() {
            The college also accepts transfer students if they meet the conditions stated in the college's regulations.</p>
       </div>
 
-      <section className="testi">
-        <h3>What Our Students Says</h3>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam nostrum
-          ipsum modi voluptate. Cum ducimus animi tenetur voluptas provident vel.
-        </p>
-        <div className="row">
-          <div className="testi-col">
-            <img src={user1Img} alt="user1" />
-            <div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-                ducimus excepturi, suscipit qui nostrum hic beatae.</p>
-              <h3>Browni Boron</h3>
-              <i className="fa fa-solid fa-star"></i>
-              <i className="fa fa-solid fa-star"></i>
-              <i className="fa fa-solid fa-star"></i>
-              <i className="fa fa-solid fa-star"></i>
-              <i className="fa fa-regular fa-star"></i>
-            </div>
-          </div>
-          <div className="testi-col">
-            <img src={user2Img} alt="user2" />
-            <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-                ducimus excepturi, suscipit qui nostrum.
-                <h3>Beneth Yest</h3>
-                <i className="fa fa-solid fa-star"></i>
-                <i className="fa fa-solid fa-star"></i>
-                <i className="fa fa-solid fa-star"></i>
-                <i className="fa fa-solid fa-star"></i>
-                <i className="fa fa-solid fa-star"></i>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="cta">
-        <h1>Enroll For Our Various Online Courses<br /> Anywhere from the World</h1>
-        <a href="" className="hero-btn">CONTACT US</a>
-      </section>
-
-      <section className="footer">
-        <h4>About Us</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus earum suscipit vel velit iure, <br />minus eaque totam ducimus libero. Labore?</p>
-        <div className="icons">
-          <i className="fa fa-brands fa-facebook"></i>
-          <i className="fa fa-brands fa-instagram"></i>
-          <i className="fa fa-brands fa-twitter"></i>
-          <i className="fa fa-brands fa-linkedin"></i>
-        </div>
-        <p>Made with <i className="fa fa-sharp fa-solid fa-heart"></i> Pabin(CodeMode365)</p>
-      </section>
+      <Footer />
     </>
 
   )

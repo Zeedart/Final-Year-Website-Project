@@ -11,7 +11,7 @@ export default function AccordianSection() {
                         <strong>Vision</strong>
                     </button>
                 </h2>
-                <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
                         To be a leading Faculty of Engineering Sciences in applying local and regional quality standards in both local and global work.
                     </div>
