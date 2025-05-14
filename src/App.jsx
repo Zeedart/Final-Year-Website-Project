@@ -13,6 +13,7 @@ import user1Img from './assets/user1.jpg';
 import user2Img from './assets/user2.jpg';
 import AccordianSection from '../HomepageSection/AccordianSection.jsx';
 import Footer from '../HomepageSection/Footer.jsx'
+import FacebookFeed from '../HomepageSection/FacebookFeed.jsx'
 
 function App() {
 
@@ -33,6 +34,8 @@ function App() {
            As for specialization, students are directed according to their preferences, taking into account the needs of the departments and their capacity.
            The college also accepts transfer students if they meet the conditions stated in the college's regulations.</p>
       </div>
+
+      <FacebookFeed />
 
       <Footer />
     </>
