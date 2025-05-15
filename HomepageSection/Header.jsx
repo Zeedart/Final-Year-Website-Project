@@ -27,12 +27,9 @@ export default function Header() {
         <i className="fa fa-solid fa-bars" onClick={showMenu}></i>
       </nav>
       <div className="text-box">
-        <h1>Where Education Lies</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique
-          aliquam cupiditate sed fugit, fuga facilis? <br />
-          ipsum dolor sit amet consectetur, adipisicing elit. Sit aperiam ea
-          quae, doloremque dolorum eaque!
+        <h1>Faculty of Engineering Science</h1>
+        <p className="Subtext">
+          Welcome to the Faculty of Engineering Science —  that has excellence in education and innovation since 2015.
         </p>
       </div>
     </section>

@@ -13,7 +13,7 @@ function FacebookNewsFeed() {
 
     return (
         <>
-        <p className="News-header">News</p>
+        <p className="News-header">Latest News</p>
         <div className="news-feed-container">
             {posts.slice(0, 3).map((post, index) => (
                 <div
