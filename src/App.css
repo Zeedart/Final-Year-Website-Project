@@ -165,7 +165,7 @@ nav img {
   border-radius: 5rem 5rem 0 0;
   padding: 5%;
   background: linear-gradient(0deg, hsla(216, 96%, 56%, 1) 0%, hsla(178, 64%, 65%, 1) 100%);
-  margin-top: 80px;
+  margin-top: 5%;
 }
 
 .footer hr {
@@ -332,11 +332,28 @@ nav img {
   font-family: "inter", sans-serif;
 }
 
+/* Wrapper for animation */
+.news-wrapper {
+  overflow: hidden;
+  transition: max-height 1.5s ease, opacity 1.5s ease;
+}
+
+
+.news-wrapper.collapsed {
+  max-height: 1300px; /* Adjust based on how tall 3 posts are */
+  opacity: 1;
+}
+
+.news-wrapper.expanded {
+  max-height: 5000px; /* Allow full expansion */
+  opacity: 1;
+}
+
 .news-feed-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Mobile: 1 column */
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(1, 1fr);
-  gap: 1.5rem; /* Same as Tailwind's gap-6 */
+  gap: 1.5rem;
   padding: 1.5rem;
   width: 80%;
   margin-left: auto;
@@ -349,32 +366,43 @@ nav img {
   background-color: rgb(232, 232, 232);
   border-radius: 1rem;
   padding: 20px;
+  animation: slideDown 2s ease;
 }
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .feed img {
   width: 100%;
-  height: 18rem; /* or whatever you like */
+  height: 18rem;
   object-fit: cover;
   border-radius: 1rem;
 }
 
 .feed-title {
-  max-width: 100%;        /* limit width to container */
-  direction: rtl;         /* right-to-left for Arabic */
+  max-width: 100%;
+  direction: rtl;
   text-align: right;
-/* prevent text from wrapping */
-  overflow: hidden;       /* hide overflowed text */
-  text-overflow: ellipsis; /* show ellipsis (...) when text overflows */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .feed-description {
   font-size: 22px;
-    max-width: 100%;        /* limit width to container */
-  direction: rtl;         /* right-to-left for Arabic */
+  max-width: 100%;
+  direction: rtl;
   text-align: right;
-/* prevent text from wrapping */
-  overflow: hidden;       /* hide overflowed text */
-  text-overflow: ellipsis; /* show ellipsis (...) when text overflows */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .feed-date {
@@ -391,8 +419,8 @@ nav img {
   justify-content: center;
 }
 
-
-.read-more-btn {
+.read-more-btn,
+.Show-btn {
   background-color: #FFD700;
   border-radius: 1rem;
   border: none;
@@ -402,12 +430,21 @@ nav img {
   padding: 20px;
 }
 
-.read-more-btn:hover {
+.Show-btn {
+  position: absolute;
+  left: 40%;
+  width: 20%;
+}
+
+.read-more-btn:hover,
+.Show-btn:hover {
   background-color: #6A0DAD;
-  /* or #800080 or #9B30FF */
   color: white;
   border: 3px dashed #FFD700;
 }
+
+
+
 
 
 @media (min-width: 640px) {
