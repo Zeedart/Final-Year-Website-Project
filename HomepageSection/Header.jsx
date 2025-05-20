@@ -17,11 +17,10 @@ export default function Header() {
         <div className="nav-links" id="nav-links">
           <i className="fa fa-solid fa-xmark" onClick={hideMenu}></i>
           <ul>
-            <li><a href="./index.html">HOME</a></li>
-            <li><a href="./about.html">ABOUT</a></li>
-            <li><a href="./course.html">COURSE</a></li>
-            <li><a href="./blog.html">BLOG</a></li>
-            <li><a href="./contact.html">CONTACT</a></li>
+            <li><button className="login-btn">LOGIN</button></li>
+            <li><a href="./index.html">DEPARTMENTS</a></li>
+            <li><a href="./about.html">CONTACT</a></li>
+            <li><a href="./course.html">NEWS</a></li>
           </ul>
         </div>
         <i className="fa fa-solid fa-bars" onClick={showMenu}></i>

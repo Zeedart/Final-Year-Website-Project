@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "inter", sans-serif;
+  font-family: "Geist", sans-serif;
 
   /* Bright Star University Primary Colors */
   --Blue: #007BFF;
@@ -68,7 +68,7 @@ nav img {
   position: relative;
 }
 
-.nav-links ul li ::after {
+.nav-links ul li:not(:first-of-type) ::after {
   content: "";
   width: 0%;
   height: 3px;
@@ -85,6 +85,21 @@ nav img {
 .nav-links ul li a {
   color: #fff;
   text-decoration: none;
+}
+
+.login-btn {
+  background-color: #FFD700;
+  border-radius: 1rem;
+  border: none;
+  color: black;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  padding:15px;
+}
+
+.login-btn:hover {
+  background-color: #0dad0d;
+  color: white;
 }
 
 
