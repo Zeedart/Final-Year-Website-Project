@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header contact={false}/>
       <DeanWords />
       <AccordianSection />
       <FacultyDepartments />

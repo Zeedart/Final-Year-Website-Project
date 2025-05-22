@@ -1,7 +1,8 @@
 import BSULogo from './HomepageAssets/logo-bsu.png';
+import { Link } from 'react-router-dom';
 
 
-export default function Header() {
+export default function Header(props) {
   const hideMenu = () => {
     // add logic to hide menu
   };
@@ -11,7 +12,7 @@ export default function Header() {
   };
 
   return (
-    <section className="header">
+    <section className={`header ${props.contact ? "small" : "large"}`}>
       <nav>
         <a href="index.html"><img src={BSULogo} alt="logo" /></a>
         <div className="nav-links" id="nav-links">
@@ -19,7 +20,11 @@ export default function Header() {
           <ul>
             <li><button className="login-btn">LOGIN</button></li>
             <li><a href="./index.html">DEPARTMENTS</a></li>
-            <li><a href="./about.html">CONTACT</a></li>
+            <li>
+              <Link to={"/Contact"}>
+                <a href="">CONTACT</a>
+              </Link>
+            </li>
             <li><a href="./course.html">NEWS</a></li>
           </ul>
         </div>

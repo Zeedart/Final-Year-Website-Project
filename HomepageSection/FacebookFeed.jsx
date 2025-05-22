@@ -17,8 +17,9 @@ function FacebookNewsFeed() {
     }
 
     return (
+        
         <>
-        <p className="News-header">Latest News</p>
+        {/* <p className="News-header">Latest News</p>
         <div className="news-feed-container">
             {showAll? posts.map((post, index) => (
                 <div
@@ -73,6 +74,7 @@ function FacebookNewsFeed() {
             }
         </div>
         <button className="Show-btn" onClick={HandleShow}>{showAll? "Hide" : "Show All"}</button>
+        */}
     </>
     );
 }
