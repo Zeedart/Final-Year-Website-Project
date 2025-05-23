@@ -1,0 +1,59 @@
+* {
+    --Blue: #007BFF;
+    --yellow: #FFD700;
+}
+
+.locationContainer {
+    width: 80%;
+    margin: auto;
+    padding: 80px 0;
+}
+
+.locationContainer iframe {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.contactInfo {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contactInfo section {
+    width: 30%;
+    height: 35vh;
+    background-color: #F3EEEE;
+    padding: 50px;
+    border-radius: 2rem;
+     overflow: visible; /* Override if needed */
+}
+
+.contactInfo section i {
+    font-size: 4rem;
+    color: var(--Blue);
+  display: inline-block; /* This is crucial */
+  transition: transform 0.3s ease;
+}
+
+.contactInfo section i:hover {
+    transform: scale(1.2);
+    /* 20% larger */
+}
+
+.contactInfo section h2 {
+    font-size: 2rem;
+    font-family: "inter", sans-serif;
+    font-weight: 700;
+    text-wrap: nowrap;
+    margin-top: 20px;
+}
+
+.contactInfo section h3 {
+    font-size: 2rem;
+    font-family: "Geist", sans-serif;
+    text-align: left;
+    color: #868789;
+}
