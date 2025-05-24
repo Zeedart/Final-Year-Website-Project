@@ -1,9 +1,8 @@
 import BSULogo from './HomepageAssets/logo-bsu.png';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 export default function Header(props) {
-  console.log(props)
 
   return (
     <section className={`header ${props.contact ? "small" : "large"}`}>
@@ -14,20 +13,31 @@ export default function Header(props) {
           <ul>
             <li><button className="login-btn">LOGIN</button></li>
             <li>
-              <Link to={"/Contact"}>
-                <a href="#">CONTACT</a>
-              </Link>
+              <NavLink 
+              to={"/"}
+              className={({ isActive }) => isActive ? 'active' : ''}>
+                HOME
+              </NavLink>
             </li>
-            <li><a href="./course.html">NEWS</a></li>
+            <li>
+              <NavLink to={"/Contact"}>
+                CONTACT
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"/News"}>
+                NEWS
+              </NavLink>
+            </li>
           </ul>
         </div>
         <i className="fa fa-solid fa-bars"></i>
       </nav>
-      {props.contact ? 
-      <div className="text-box contact-text-box">
-        <h1>Contact Us</h1>
-      </div>
-      : 
+      {props.contact ?
+        <div className="text-box contact-text-box">
+          <h1>Contact Us</h1>
+        </div>
+        :
         <div className="text-box">
           <h1>Faculty of Engineering Science</h1>
           <p className="Subtext">

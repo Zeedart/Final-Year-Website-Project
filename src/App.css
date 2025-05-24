@@ -83,18 +83,27 @@ nav img {
   position: relative;
 }
 
-.nav-links ul li:not(:first-of-type) ::after {
+/* Default underline effect (for non-active links) */
+.nav-links ul li:not(:first-of-type) :not(.active):after {
   content: "";
   width: 0%;
-  height: 3px;
+  height: 5px;
   background-color: var(--yellow);
   display: block;
   margin: auto;
-  transition: 0.5s;
+  transition: 0.5s; /* Only applies to non-active */
 }
 
-.nav-links ul li:hover ::after {
+/* Hover effect (non-active) */
+.nav-links ul li:not(:first-of-type) :not(.active):hover::after {
   width: 100%;
+}
+
+/* ACTIVE LINK - Forcefully remove transition */
+.active {
+  border-bottom: 5px solid var(--yellow) !important;
+  width: 100% !important; /* Ensures full width */
+  transition: none !important; /* Kills any transition */
 }
 
 .nav-links ul li a {
