@@ -1,11 +1,31 @@
 import BSULogo from './HomepageAssets/logo-bsu.png';
 import { Link, NavLink } from 'react-router-dom';
+import Departmentjson from "../Departments/DepartmentsData.json"
 
 
 export default function Header(props) {
 
+  let departmentClass = "";
+
+  switch (props.department) {
+    case 0:
+      departmentClass = "smallGeology";
+      break;
+    case 1: 
+      departmentClass = "smallComputer Science"
+      break;
+    case 2:
+      departmentClass = "smallOccupational Safety"
+      break;
+    default:
+      departmentClass = "small";
+  }
+
   return (
-    <section className={`header ${props.contact ? "small" : "large"}`}>
+    <section className={`header ${props.contact? "small" :
+      props.inDepartment ? departmentClass : "large"
+    }`
+}>
       <nav>
         <a href="index.html"><img src={BSULogo} alt="logo" /></a>
         <div className="nav-links" id="nav-links">
@@ -13,9 +33,9 @@ export default function Header(props) {
           <ul>
             <li><button className="login-btn">LOGIN</button></li>
             <li>
-              <NavLink 
-              to={"/"}
-              className={({ isActive }) => isActive ? 'active' : ''}>
+              <NavLink
+                to={"/"}
+                className={({ isActive }) => isActive ? 'active' : ''}>
                 HOME
               </NavLink>
             </li>
@@ -38,12 +58,22 @@ export default function Header(props) {
           <h1>Contact Us</h1>
         </div>
         :
-        <div className="text-box">
-          <h1>Faculty of Engineering Science</h1>
-          <p className="Subtext">
-            Welcome to the Faculty of Engineering Science —  that has excellence in education and innovation since 2015.
-          </p>
-        </div>
+
+        props.inDepartment ?
+          <div className="text-box">
+            <h1>{Departmentjson[props.department].heroTxt}</h1>
+            <p className="Subtext">
+              {Departmentjson[props.department].subHeroTxt}
+            </p>
+          </div>
+
+          :
+          <div className="text-box">
+            <h1>Faculty of Engineering Science</h1>
+            <p className="Subtext">
+              Welcome to the Faculty of Engineering Science —  that has excellence in education and innovation since 2015.
+            </p>
+          </div>
       }
     </section>
   );

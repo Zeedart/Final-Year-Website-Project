@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import CEPIC from "./HomepageAssets/CE-PIC.jpg"
 import GEOLOGYPIC from "./HomepageAssets/GEOLOGY-PIC.jpg"
 import SAFTEYPIC from "./HomepageAssets/SAFETY-PIC.jpg"
@@ -11,15 +12,17 @@ export default function FacultyDepartments() {
             </p>
             <div className="row">
                 <div className="Major-col">
-                    <img src={GEOLOGYPIC} alt="Major" />
-                    <div className="layer">
-                        <h3>Petroleum Geology Engineering</h3>
-                    </div>
+                    <Link to={"/Geology"}>
+                        <img src={GEOLOGYPIC} alt="Major" />
+                        <div className="layer">
+                            <h3>Petroleum Geology Engineering</h3>
+                        </div>
+                    </Link>
                 </div>
                 <div className="Major-col">
                     <img src={SAFTEYPIC} alt="Major" />
                     <div className="layer">
-                        <h3>Occupational Safety and Health <br/> Engineering</h3>
+                        <h3>Occupational Safety and Health <br /> Engineering</h3>
                     </div>
                 </div>
                 <div className="Major-col">
@@ -29,6 +32,6 @@ export default function FacultyDepartments() {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     )
 }

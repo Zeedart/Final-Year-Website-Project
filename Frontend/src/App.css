@@ -34,6 +34,16 @@ body {
   position: relative;
 }
 
+.smallGeology {
+  height: 50vh;
+  /* background-blend-mode: soft-light; */
+  background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.79)),
+    url(../Departments/assets/geologist-module.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
 .large {
   min-height: 100vh;
   /* background-blend-mode: soft-light; */
@@ -50,7 +60,8 @@ body {
   font-weight: 500;
   border-bottom: 2px solid white;
   border-radius: 3rem;
-  width: 74%;
+  padding: 6px 30px;
+  width: fit-content;
   margin-left: auto;
   margin-right: auto;
   white-space: nowrap;
