@@ -1,4 +1,5 @@
 import BSUlogo from "./HomepageAssets/BSULogo.png"
+import { Link } from "react-router-dom"
 
 export default function Footer() {
 
@@ -15,7 +16,9 @@ export default function Footer() {
                         <h1>Links</h1>
                         <ul>
                             <li>News</li>
-                            <li>Computer Engineering</li>
+                            <Link to={"/ComputerEngineering"}>
+                                                        <li>Computer Engineering</li>
+                            </Link>
                             <li>Petrolum Geology Engineering</li>
                             <li>Occupational Safety and Health Engineering</li>
                         </ul>

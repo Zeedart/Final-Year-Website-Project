@@ -1,51 +1,65 @@
 [
-    {
-        "id": 1,
-        "heroTxt": "Geology Department",
-        "subHeroTxt": "Exploring earths Development with precision and innovation.",
-        "dean": "Mr. Ali Khalifa Almagbari",
-        "deanOccupation": "Head of the Geology Department",
-        "deanWord": "The Geology Department, part of the Faculty of Engineering Sciences, plays a key role in advancing Earth science education in Libya. With modern labs, specialized facilities in petroleum geology and hydrogeology, and strong academic staff, the department combines theory, field training, and research. It actively collaborates with national institutions like Sirte Company and Schlumberger, maintaining a strong academic and research environment.",
-        "introTitle": "Introduction to the Geology Department",
-        "introTxt": "The Geophysics Department was established in 1981 and is considered the first geophysics department in Libya since the founding of the university building. The Geology Department is one of the departments within the Faculty of Engineering Sciences at Bright Star University. Geology is a branch of science concerned with the study of Earth sciences using geological properties. It has expanded to include various applied fields.",
-        "vision": "To make the Department of Geological Engineering distinguished scientifically and in research at the international and regional levels.",
-        "message": "Graduating engineers with high technical and professional skills capable of joining the labor market according to quality standards.",
-        "goal": "<li>Preparing graduates in Computer and Control Engineering capable of engaging in the labor market.</li><li>Developing the administrative program in the Geological Engineering Department.</li><li>Advancing research aspects in the field of Geological Engineering.</li><li>Offering community service programs in Geological Engineering.</li><li>Enhancing academic reputation through achieving international accreditation.</li>",
-        "linkTxt": "Department Organizational Structure .. Click here",
-        "link" : "https://bsu.edu.ly/wp-content/uploads/2022/06/%D8%A7%D9%84%D9%87%D9%8A%D9%83%D9%84-%D8%A7%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%85%D9%8A-%D9%84%D9%82%D8%B3%D9%85-%D9%87%D9%86%D8%AF%D8%B3%D8%A9-%D8%A7%D9%84%D8%AC%D9%8A%D9%88%D9%84%D9%88%D8%AC%D9%8A%D8%A7.pdf"
-    },
-
-    {
+  {
+    "id": 1,
+    "heroTxt": "Geology Department",
+    "subHeroTxt": "Exploring earths Development with precision and innovation.",
+    "dean": "Mr. Ali Khalifa Almagbari",
+    "img": "https://scontent.fben1-1.fna.fbcdn.net/v/t1.6435-9/135275061_10221088939665508_5711547989770182457_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=xefQq39TvsEQ7kNvwFEBB60&_nc_oc=Adl72SoDRjGGn6Nr1Zhiz3MMAdLJ3nsO6-zvghRtmYRlCvYiujTgIk8VpQ1_DsTERrU&_nc_zt=23&_nc_ht=scontent.fben1-1.fna&_nc_gid=6w_cA8kikRugDwAQxBLlpg&oh=00_AfIeCg7MsIQfNJSWyTIhBCJrVD21RWSHo8oZ6RtFk1VrGw&oe=685BE2DC",
+    "deanOccupation": "Head of the Geology Department",
+    "deanWord": "The Geology Department, part of the Faculty of Engineering Sciences, plays a key role in advancing Earth science education in Libya. With modern labs, specialized facilities in petroleum geology and hydrogeology, and strong academic staff, the department combines theory, field training, and research. It actively collaborates with national institutions like Sirte Company and Schlumberger, maintaining a strong academic and research environment.",
+    "introTitle": "Introduction to the Geology Department",
+    "introTxt": "The Geophysics Department was established in 1981 and is considered the first geophysics department in Libya since the founding of the university building. The Geology Department is one of the departments within the Faculty of Engineering Sciences at Bright Star University. Geology is a branch of science concerned with the study of Earth sciences using geological properties. It has expanded to include various applied fields.",
+    "vision": "To make the Department of Geological Engineering distinguished scientifically and in research at the international and regional levels.",
+    "message": "Graduating engineers with high technical and professional skills capable of joining the labor market according to quality standards.",
+    "goal": [
+      "Developing the administrative program in the Geological Engineering Department.",
+      "Advancing research aspects in the field of Geological Engineering.",
+      "Offering community service programs in Geological Engineering.",
+      "Enhancing academic reputation through achieving international accreditation."
+    ],
+    "linkTxt": "Department Organizational Structure .. Click here",
+    "link": "https://bsu.edu.ly/wp-content/uploads/2022/06/%D8%A7%D9%84%D9%87%D9%8A%D9%83%D9%84-%D8%A7%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%85%D9%8A-%D9%84%D9%82%D8%B3%D9%85-%D9%87%D9%86%D8%AF%D8%B3%D8%A9-%D8%A7%D9%84%D8%AC%D9%8A%D9%88%D9%84%D9%88%D8%AC%D9%8A%D8%A7.pdf"
+  },
+  {
     "id": 2,
     "heroTxt": "Computer Science Department",
     "subHeroTxt": "Developing the future, one algorithm at a time.",
     "dean": "Dr. Abdul Hafid Bukhari",
+    "img": "https://bsu.edu.ly/wp-content/uploads/2025/02/Screenshot-2025-02-25-095354.png",
     "deanOccupation": "Head of the Computer Science Department",
     "deanWord": "The Computer Science Department, part of the Faculty of Engineering Sciences, leads in advancing computing education and research in Libya. the department focuses on software development, Problem Solving, Data Structures and Algorithms and practical training.",
     "introTitle": "Introduction to the Computer Science Department",
     "introTxt": "The Department of Computer Engineering is one of the departments within the Faculty of Engineering Sciences at Al-Najm Al-Satea University. The department offers a specialization in programmable control, including designing control boards and studying software, digital systems, program design, and coding. This specialization aims to utilize these modern technologies in manufacturing processes. The department also houses several computer labs that cover the practical aspects of all the prescribed courses, both for the department and other scientific departments in the university. These labs are equipped with advanced programming and simulation software to support industrial processes effectively.",
     "vision": "Academic excellence in preparing qualified national professionals who meet labor market needs and contribute to solving industrial challenges.",
     "message": "Preparing highly competent and well-trained national graduates ready to enter the job market in Computer Engineering.",
-    "goal": "<li>Achieving quality standards in the entire educational process as well as in administrative and technical affairs.</li><li>Providing all requirements of the educational process including qualified faculty members, advanced labs, and other equipment.</li><li>Developing the research aspect in the field of Computer Engineering.</li><li>Continuous development of the department’s staff.</li>",
+    "goal": [
+    "Achieving quality standards in the entire educational process as well as in administrative and technical affairs.",
+    "Providing all requirements of the educational process including qualified faculty members, advanced labs, and other equipment.",
+    "Developing the research aspect in the field of Computer Engineering.",
+    "Continuous development of the department’s staff."
+  ],
     "linkTxt": "Department Organizational Structure .. Click here",
-    "link" : "https://bsu.edu.ly/wp-content/uploads/2022/06/%D8%A7%D9%84%D9%87%D9%8A%D9%83%D9%84-%D8%A7%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%85%D9%8A-%D9%84%D9%82%D8%B3%D9%85-%D9%87%D9%86%D8%AF%D8%B3%D8%A9-%D8%A7%D9%84%D8%AD%D8%A7%D8%B3%D9%88%D8%A8.pdf"
+    "link": "https://bsu.edu.ly/wp-content/uploads/2022/06/%D8%A7%D9%84%D9%87%D9%8A%D9%83%D9%84-%D8%A7%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%85%D9%8A-%D9%84%D9%82%D8%B3%D9%85-%D9%87%D9%86%D8%AF%D8%B3%D8%A9-%D8%A7%D9%84%D8%AD%D8%A7%D8%B3%D9%88%D8%A8.pdf"
   },
-
-
-
   {
     "id": 3,
-    "heroTxt": "Occupational Safety and Health Engineering Department",
+    "heroTxt": "Safety and Health Engineering Department",
     "subHeroTxt": "Ensuring safer workplaces through science and practice.",
-    "dean": "Eng. Khaled Omar",
+    "dean": "Eng. Khaled",
+    "img": "https://avatar.iran.liara.run/public/boy?username=Ash",
     "deanOccupation": "Head of the Occupational Safety and Health Engineering Department",
     "deanWord": "The Occupational Safety and Health Engineering Department strives to promote safety culture and reduce workplace hazards in Libya. The department combines theoretical knowledge with practical training and collaborates with industry to improve occupational health standards.",
     "introTitle": "Introduction to the Occupational Safety and Health Engineering Department",
     "introTxt": "It is the specialization concerned with teaching the curriculum of Occupational Safety and Health at the Faculty of Engineering Sciences over eight academic semesters, totaling one hundred and fifty-seven credit hours. This program aims to meet current and future labor market demands across all industrial and service sectors, including construction projects.",
     "vision": "To make the Safety Department at Bright Star University University a leading department in North Africa by 2028.",
     "message": "Preparing specialized professionals in Occupational Safety Engineering capable of competing in local and international job markets according to quality standards.",
-    "goal": "<li>Developing the administrative program in the Occupational Safety and Health Engineering Department.</li><li>Advancing research in the field of Occupational Safety and Health Engineering.</li><li>Offering community service programs in Occupational Safety and Health Engineering.</li><li>Enhancing academic reputation through achieving international accreditation.</li>",
+    "goal": [
+      "Developing the administrative program in the Occupational Safety and Health Engineering Department.",
+    "Advancing research in the field of Occupational Safety and Health Engineering.",
+    "Offering community service programs in Occupational Safety and Health Engineering.",
+    "Enhancing academic reputation through achieving international accreditation."
+    ],
     "linkTxt": null,
-    "link" : null
+    "link": null
   }
 ]

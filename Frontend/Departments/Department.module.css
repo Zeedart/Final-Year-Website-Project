@@ -1,0 +1,44 @@
+.departmentStructure {
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(./assets/Docs.jpeg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 100px 0;
+    border-radius: 20px;
+}
+
+.departmentStructure h1 {
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+    font-size: 3rem;
+}
+
+@media (max-width: 700px) {
+    .departmentStructure h1 {
+        font-size: 24px;
+    }
+}
+
+.departmentStructure a button {
+  background-color: #FFD700;
+  border-radius: 1rem;
+  padding: 15px;
+  border: none;
+  color: black;
+  font-size: 30px;
+  font-weight: 600;
+  margin-left: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.departmentStructure a button:hover {
+  background-color: #007BFF;
+  /* or #800080 or #9B30FF */
+  color: white;
+  border: 3px dashed #FFD700;
+}
+

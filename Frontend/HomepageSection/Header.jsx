@@ -12,10 +12,10 @@ export default function Header(props) {
       departmentClass = "smallGeology";
       break;
     case 1: 
-      departmentClass = "smallComputer Science"
+      departmentClass = "smallComputerScience"
       break;
     case 2:
-      departmentClass = "smallOccupational Safety"
+      departmentClass = "smallOccupationalSafety"
       break;
     default:
       departmentClass = "small";

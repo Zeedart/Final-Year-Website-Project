@@ -1,0 +1,25 @@
+.IntroductionSection {
+  width: 80%;
+  margin: 90px auto auto auto;
+}
+
+.IntroductionTitle {
+  font-size: 40px;
+}
+
+.IntroductionTxt {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.IntroductionTitle::before {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  margin-right: 10px;
+  /* Adds some space between the image and the heading */
+  background-image: url("../HomepageSection/HomepageAssets/About-Icon.png");
+}

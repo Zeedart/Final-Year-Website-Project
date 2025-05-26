@@ -20,16 +20,20 @@ export default function FacultyDepartments() {
                     </Link>
                 </div>
                 <div className="Major-col">
-                    <img src={SAFTEYPIC} alt="Major" />
-                    <div className="layer">
-                        <h3>Occupational Safety and Health <br /> Engineering</h3>
-                    </div>
+                    <Link to={"/Safety"}>
+                        <img src={SAFTEYPIC} alt="Major" />
+                        <div className="layer">
+                            <h3>Occupational Safety and Health <br /> Engineering</h3>
+                        </div>
+                    </Link>
                 </div>
                 <div className="Major-col">
-                    <img src={CEPIC} alt="Major" />
-                    <div className="layer">
-                        <h3>Computer Engineering</h3>
-                    </div>
+                    <Link to={"/ComputerEngineering"}>
+                        <img src={CEPIC} alt="Major" />
+                        <div className="layer">
+                            <h3>Computer Engineering</h3>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </section >

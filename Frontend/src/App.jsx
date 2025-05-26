@@ -21,8 +21,8 @@ function App() {
   return (
     <>
       <Header contact={false}/>
-      <DeanWords />
-      <AccordianSection />
+      <DeanWords inDepartment={false} />
+      <AccordianSection inDepartment={false} />
       <FacultyDepartments />
 
       <div className='About-section'>

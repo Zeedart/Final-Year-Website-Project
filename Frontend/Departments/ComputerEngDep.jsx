@@ -5,23 +5,23 @@ import Footer from "../HomepageSection/Footer.jsx"
 import Introduction from "./Introduction.jsx"
 import AccordianSection from "../HomepageSection/AccordianSection.jsx"
 import styles from "./Department.module.css"
-import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
+import { useEffect } from "react"
 
-export default function GeologyDep() {
+export default function ComputerEngDep() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location.key]); // Unique key for each route
     return (
         <>
-            <Header contact={false} inDepartment={true} department={0} />
-            <DeanWords inDepartment={true} department={0} departmentData={DepartmentJSON[0]} />
-            <Introduction departmentData={DepartmentJSON[0]} />
-            <AccordianSection inDepartment={true} departmentData={DepartmentJSON[0]} />
+            <Header contact={false} inDepartment={true} department={1} />
+            <DeanWords inDepartment={true} department={1} departmentData={DepartmentJSON[1]} />
+            <Introduction departmentData={DepartmentJSON[1]} />
+            <AccordianSection inDepartment={true} departmentData={DepartmentJSON[1]} />
 
             <section className={`${styles.departmentStructure}`}>
                 <h1>Department Organizational Structure</h1>
-                <a href={DepartmentJSON[0].link} className="heroBtn">
+                <a href={DepartmentJSON[1].link} className="heroBtn">
                     <button>Click Here</button>
                 </a>
             </section>

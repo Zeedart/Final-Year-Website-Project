@@ -34,14 +34,31 @@ body {
   position: relative;
 }
 
-.smallGeology {
+
+.smallGeology,
+.smallComputerScience,
+.smallOccupationalSafety {
   height: 50vh;
   /* background-blend-mode: soft-light; */
-  background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.79)),
-    url(../Departments/assets/geologist-module.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
+}
+
+.smallOccupationalSafety {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.79)),
+    url(../Departments/assets/Safety.jpg);
+
+}
+
+.smallGeology {
+  background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.79)),
+    url(../Departments/assets/geologist-module.jpg);
+}
+
+.smallComputerScience {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.4), rgba(4, 9, 30, 0.79)),
+    url(../Departments/assets/ComputerEng.jpg);
 }
 
 .large {
@@ -102,7 +119,8 @@ nav img {
   background-color: var(--yellow);
   display: block;
   margin: auto;
-  transition: 0.5s; /* Only applies to non-active */
+  transition: 0.5s;
+  /* Only applies to non-active */
 }
 
 /* Hover effect (non-active) */
@@ -113,8 +131,10 @@ nav img {
 /* ACTIVE LINK - Forcefully remove transition */
 .active {
   border-bottom: 5px solid var(--yellow) !important;
-  width: 100% !important; /* Ensures full width */
-  transition: none !important; /* Kills any transition */
+  width: 100% !important;
+  /* Ensures full width */
+  transition: none !important;
+  /* Kills any transition */
 }
 
 .nav-links ul li a {
@@ -163,6 +183,7 @@ nav img {
 .DeanWords p {
   text-align: center;
   font-size: 20px;
+  line-height: 2rem;
   width: 80%;
   color: #5e5e5e;
   margin-left: auto;
@@ -180,11 +201,13 @@ nav img {
 .DeanWords>h2 {
   color: #367DCE;
   font-weight: 600;
+  font-family: "Geist", sans-serif;
 }
 
 .DeanWords>h4 {
   color: #3e3e3e;
   font-weight: 600;
+  font-family: "inter", sans-serif;
 }
 
 /* ACCORDIAN VISION, GOAL, MESSEAGE*/
@@ -267,6 +290,7 @@ nav img {
 .footer-links>ul li {
   list-style: none;
   font-size: 20px;
+  
 }
 
 .footer-location {
