@@ -7,6 +7,7 @@ import AccordianSection from "../HomepageSection/AccordianSection.jsx"
 import styles from "./Department.module.css"
 import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
+import Courses from "./assets/courses.jsx"
 
 export default function GeologyDep() {
     useEffect(() => {
@@ -25,6 +26,8 @@ export default function GeologyDep() {
                     <button>Click Here</button>
                 </a>
             </section>
+
+            <Courses department={0} />
 
             <Footer />
         </>

@@ -24,6 +24,15 @@ app.get("/students", (req, res) => {
     })
 })
 
+app.get("/subject/:Major", (req, res) => {
+    const majorId = req.params.Major;           // get Major from URL
+    const sql = "SELECT * FROM subject WHERE MajorID = ? OR MajorID IS NULL";
+    db.query(sql, [majorId], (err, data) => {   // pass majorId as parameter
+        if (err) return res.json(err);
+        return res.json(data);
+    });
+});
+
 app.listen(8081, ()=> {
     console.log("Listening")
 })

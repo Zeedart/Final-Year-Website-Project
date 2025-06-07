@@ -1,0 +1,59 @@
+.courseGrid {
+    justify-content: center;
+    width: 80%;
+    margin-left: 10%;
+    display: grid;
+    grid-template-columns: repeat(3, 33.333%);
+    gap: 2%;
+    margin-bottom: 15%;
+}
+
+.semesterSection {
+  background-color: #f4f4f4;
+  border-radius: 1rem;
+  padding: 20px;
+}
+
+.semesterSection h2 {
+  font-size: 1.8rem;
+  padding: 10px;
+  background-color: #60adff;
+  border-radius: .5rem;
+  margin-bottom: 20px;
+  color: #222222;
+  text-align: center;
+}
+
+.subjectsGrid {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(80px, .9fr));
+  gap: 16px;
+}
+
+.subjectCard {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.subjectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+
+.subjectCard h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+  color: #222;
+  text-align: left;
+}
+
+.subjectCard p {
+  color: #4a4a4a;
+  text-align: left;
+  font-size: 1rem;
+}

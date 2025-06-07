@@ -17,10 +17,11 @@ export default function Footer() {
                         <ul>
                             <li>News</li>
                             <Link to={"/ComputerEngineering"}>
-                                                        <li>Computer Engineering</li>
+                                <li>Computer Engineering</li>
                             </Link>
-                            <li>Petrolum Geology Engineering</li>
-                            <li>Occupational Safety and Health Engineering</li>
+                            <Link to={"/Geology"}><li>Petrolum Geology Engineering</li></Link>
+                            <Link to={"/Safety"}><li>Occupational Safety and Health Engineering</li></Link>
+
                         </ul>
                     </section>
 
