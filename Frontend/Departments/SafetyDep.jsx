@@ -7,6 +7,7 @@ import AccordianSection from "../HomepageSection/AccordianSection.jsx"
 import styles from "./Department.module.css"
 import { useLocation } from "react-router-dom"
 import { useEffect } from "react"
+import Courses from "./assets/courses.jsx"
 
 export default function SafetyDep() {
     useEffect(() => {
@@ -18,7 +19,7 @@ export default function SafetyDep() {
             <DeanWords inDepartment={true} department={2} departmentData={DepartmentJSON[2]} />
             <Introduction departmentData={DepartmentJSON[2]} />
             <AccordianSection inDepartment={true} departmentData={DepartmentJSON[2]} />
-
+            <Courses department={2} />
             <Footer />
         </>
     )

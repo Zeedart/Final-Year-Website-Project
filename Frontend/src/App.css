@@ -20,6 +20,9 @@ body {
 }
 
 /* --------------------------------------------------HOMEPAGE ------------------------------------------------*/
+.popup {
+  background-color: #0dad0d;
+}
 .header {
   width: 100%;
 }
@@ -219,6 +222,7 @@ nav img {
   margin-right: auto;
   border-left: 10px solid var(--Blue);
   border-radius: .5rem;
+  margin-bottom: 5%;
 }
 
 

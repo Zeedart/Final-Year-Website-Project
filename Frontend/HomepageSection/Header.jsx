@@ -1,6 +1,8 @@
 import BSULogo from './HomepageAssets/logo-bsu.png';
 import { Link, NavLink } from 'react-router-dom';
+import { useState } from 'react';
 import Departmentjson from "../Departments/DepartmentsData.json"
+import Login from "./Login.jsx"
 
 
 export default function Header(props) {
@@ -11,7 +13,7 @@ export default function Header(props) {
     case 0:
       departmentClass = "smallGeology";
       break;
-    case 1: 
+    case 1:
       departmentClass = "smallComputerScience"
       break;
     case 2:
@@ -21,17 +23,24 @@ export default function Header(props) {
       departmentClass = "small";
   }
 
+  const [seen, setSeen] = useState(false)
+
+  function togglePop() {
+    setSeen(!seen);
+  };
+
   return (
-    <section className={`header ${props.contact? "small" :
+    <section className={`header ${props.contact ? "small" :
       props.inDepartment ? departmentClass : "large"
-    }`
-}>
+      }`
+    }>
       <nav>
         <a href="index.html"><img src={BSULogo} alt="logo" /></a>
         <div className="nav-links" id="nav-links">
           <i className="fa fa-solid fa-xmark"></i>
           <ul>
-            <li><button className="login-btn">LOGIN</button></li>
+            <li><button onClick={togglePop} className="login-btn">LOGIN</button></li>
+            {seen ? <Login toggle={togglePop} /> : null}
             <li>
               <NavLink
                 to={"/"}
