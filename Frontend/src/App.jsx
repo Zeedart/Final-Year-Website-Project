@@ -3,19 +3,12 @@ import './App.css'
 import Header from "../HomepageSection/Header.jsx"
 import DeanWords from "../HomepageSection/DeanWords.jsx"
 import FacultyDepartments from '../HomepageSection/FacultyDepartments.jsx'
-import londonImg from './assets/london.png';
-import newyorkImg from './assets/newyork.png';
-import washingtonImg from './assets/washington.png';
-import libraryImg from './assets/library.png';
-import basketballImg from './assets/basketball.png';
-import cafeteriaImg from './assets/cafeteria.png';
-import user1Img from './assets/user1.jpg';
-import user2Img from './assets/user2.jpg';
 import AccordianSection from '../HomepageSection/AccordianSection.jsx';
 import Footer from '../HomepageSection/Footer.jsx'
 import FacebookFeed from '../HomepageSection/FacebookFeed.jsx'
 
 function App() {
+
 
 
   return (
