@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import Departmentjson from "../Departments/DepartmentsData.json"
 import Login from "./Login.jsx"
+import Swal from 'sweetalert2'
 
 
 export default function Header(props) {
@@ -29,6 +30,24 @@ export default function Header(props) {
     setSeen(!seen);
   };
 
+  const [user, setUser] = useState(null)
+
+  function handleUserData(data) {
+    data.length === 0 ? Swal.fire({
+      icon: 'error',
+      title: 'Login Failed',
+      text: 'Invalid ID or National Number',
+    }) :
+      setUser(data)
+    Swal.fire({
+      icon: 'success',
+      title: 'Login Successful',
+      showConfirmButton: false,
+      timer: 1500,
+    })
+  }
+
+
   return (
     <section className={`header ${props.contact ? "small" :
       props.inDepartment ? departmentClass : "large"
@@ -40,7 +59,7 @@ export default function Header(props) {
           <i className="fa fa-solid fa-xmark"></i>
           <ul>
             <li><button onClick={togglePop} className="login-btn">LOGIN</button></li>
-            {seen ? <Login toggle={togglePop} /> : null}
+            {seen ? <Login toggle={togglePop} setUser={handleUserData} /> : null}
             <li>
               <NavLink
                 to={"/"}

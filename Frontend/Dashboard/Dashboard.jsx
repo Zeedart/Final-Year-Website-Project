@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Dashboard.module.css';
 import pfp from './images/pfp.png';
-import logo from './images/logo.png';
+import logo from '../HomepageSection/HomepageAssets/BSULogo.png';
 import { useEffect, useState } from 'react';
 
 const Dashboard = () => {
@@ -96,9 +96,6 @@ useEffect(() => {
       <header className={`${styles.header} ${styles.active}`}>
         <div className={styles.logo} title="University Management System">
           <img src={logo} alt="University Logo" />
-          <h2>
-            U<span className={styles.danger}>M</span>S
-          </h2>
         </div>
 
         <div className={styles.navbar}>
