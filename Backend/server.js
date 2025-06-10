@@ -24,6 +24,15 @@ app.get("/students", (req, res) => {
     })
 })
 
+app.get("/student/:StudentID", (req, res) => {
+    const StudentID = req.params.StudentID
+    const sql = "SELECT * FROM student WHERE StudentID = ?"
+    db.query(sql, [StudentID], (err, data) => {
+        if(err) return res.json(err);
+        return res.json(data);
+    })
+})
+
 app.get("/subject/:Major", (req, res) => {
     const majorId = req.params.Major;           // get Major from URL
     const sql = "SELECT * FROM subject WHERE MajorID = ? OR MajorID IS NULL";

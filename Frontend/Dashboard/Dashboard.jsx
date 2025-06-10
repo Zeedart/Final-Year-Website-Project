@@ -1,25 +1,43 @@
 import React from 'react';
 import styles from './Dashboard.module.css';
-import pfp from './images/profile-1.jpg';
+import pfp from './images/pfp.png';
 import logo from './images/logo.png';
-import profile2 from './images/profile-2.jpeg';
 import { useEffect, useState } from 'react';
 
 const Dashboard = () => {
   const [data, setData] = useState([])
+  const [studentData, setStudentData] = useState([])
   const StudentID = 212084
+  const majors = {
+    0: "Petroleum Geology Engineering",
+    1: "Computer Engineering",
+    2: "Occupational Safety and Health Engineering"
+  }
 
-  useEffect(() => {
-    fetch(`http://localhost:8081/marks/${StudentID}`)
-      .then(res => res.json())
-      .then(data => setData(data))
-      .catch(err => console.log(err))
-  }, [])
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const marksRes = await fetch(`http://localhost:8081/marks/${StudentID}`);
+      const marksData = await marksRes.json();
+      setData(marksData);
 
-  console.log(data)
+      const studentRes = await fetch(`http://localhost:8081/student/${StudentID}`);
+      const studentData = await studentRes.json();
+      setStudentData(studentData);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
+  fetchData();
+}, []);
+
+
+  const statusStyle = studentData[0]?.Status === "Active" ? styles.statusActive : 
+                     studentData[0]?.Status === "Graduated"? styles.graduated: styles.statusInactive;
   // ex:  {MarkID: 119, StudentID: 212084, SubjectID: 17, Semester: 1, AttemptNumber: 1, …}
-
+  
+  console.log(studentData)
   function ShowSubjects() {
     const groupedBySemester = {};
 
@@ -34,7 +52,7 @@ const Dashboard = () => {
     return (
       <>
         {Object.entries(groupedBySemester).map(([semester, subjects]) => (
-          <>
+          <div key={semester}>
             <h1 style={{marginBottom: "2%"}}>Semester {semester}</h1>
             <div className='arrange' style={{marginBottom: "5%"}}>
               {subjects.map(({ SubjectID, SubjectName, SubjectCode, Mark }) => {
@@ -60,9 +78,8 @@ const Dashboard = () => {
                   </div>
                 );
               })}
-
             </div>
-          </>
+          </div>
         ))}
       </>
     );
@@ -88,21 +105,11 @@ const Dashboard = () => {
           <a href="#home" className={styles.active}>
             <h3>Home</h3>
           </a>
-          <a href="#exam">
-            <h3>Examination</h3>
-          </a>
-          <a href="#password">
-            <h3>Change Password</h3>
-          </a>
           <a href="#logout">
             <h3>Logout</h3>
           </a>
         </div>
 
-        <div className={styles.themeToggler}>
-          <span className={`material-icons-sharp ${styles.active}`}>{/* icon link */}</span>
-          <span className="material-icons-sharp">{/* icon link */}</span>
-        </div>
       </header>
       <aside className={styles.aside}>
         <div className={styles.profile}>
@@ -111,21 +118,17 @@ const Dashboard = () => {
               <img src={pfp} alt="Profile" />
             </div>
             <div className={styles.info}>
-              <p>Hey, <b>Alex</b></p>
-              <small className={styles.textMuted}>12102030</small>
+              <p>Hey, <b>{studentData[0]?.Name}</b></p>
+              <small className={styles.textMuted}>{studentData[0]?.StudentID}</small>
             </div>
           </div>
           <div className={styles.about}>
-            <h5>Course</h5>
-            <p>BTech. Computer Science & Engineering</p>
-            <h5>DOB</h5>
-            <p>29-Feb-2020</p>
-            <h5>Contact</h5>
-            <p>1234567890</p>
-            <h5>Email</h5>
-            <p>unknown@gmail.com</p>
-            <h5>Address</h5>
-            <p>Ghost town Road, New York, America</p>
+            <h5>Major</h5>
+            <p>{majors[studentData[0]?.MajorID]}</p>
+            <h5>Current Semester</h5>
+            <p>{studentData[0]?.CurrentSemester}</p>
+            <h5>Status</h5>
+            <p className={statusStyle}>{studentData[0]?.Status}</p>
           </div>
         </div>
       </aside>

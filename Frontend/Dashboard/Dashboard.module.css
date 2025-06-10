@@ -195,33 +195,6 @@
     cursor: pointer;
 }
 
-.header .themeToggler {
-    background: var(--color-light);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 1.6rem;
-    width: 4.2rem;
-    cursor: pointer;
-    border-radius: var(--border-radius-1);
-    margin-right: 2rem;
-}
-
-.header .themeToggler span {
-    font-size: 1.2rem;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header .themeToggler span.active {
-    background-color: var(--color-primary);
-    color: white;
-    border-radius: var(--border-radius-1);
-}
-
 .profile {
     margin-top: 2rem;
     width: 13rem;
@@ -250,18 +223,69 @@
     margin-right: 0;
 }
 
-.info p {
-    margin-bottom: 0;
+.about p:not(:last-child) {
+    font-size: 20px;
 }
 
-.about p {
-    padding-bottom: 1rem;
+.about h5 {
+    font-size: 15px;
 }
+
+
+.info p {
+    margin-bottom: 0;
+    width: 90px;
+}
+
+.info p b {
+    font-weight: 300;
+}
+
+.info small {
+    margin-left: 10px;
+}
+
 
 .aside .profile .about {
     margin-top: 1rem;
 }
 
+.statusActive {
+    background-color: #4BB543;
+    color: white;
+    border-radius: 1rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+    
+}
+
+
+.statusInactive {
+    background-color: #d63124;
+    border-radius: 1rem;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.graduated {
+    background-color: #20b9ff;
+    color: white;
+    border-radius: 1rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.graduated::before {
+    content: "🌟";
+}
+
+.graduated::after {
+    content: "🌟";
+}
 
 .main {
     position: relative;
