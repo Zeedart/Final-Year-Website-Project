@@ -33,19 +33,23 @@ export default function Header(props) {
   const [user, setUser] = useState(null)
 
   function handleUserData(data) {
-    data.length === 0 ? Swal.fire({
-      icon: 'error',
-      title: 'Login Failed',
-      text: 'Invalid ID or National Number',
-    }) :
-      setUser(data)
-    Swal.fire({
-      icon: 'success',
-      title: 'Login Successful',
-      showConfirmButton: false,
-      timer: 1500,
-    })
+    if (data.length === 0) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Login Failed',
+        text: 'Invalid ID or National Number',
+      });
+    } else {
+      setUser(data);
+      Swal.fire({
+        icon: 'success',
+        title: 'Login Successful',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
   }
+
 
 
   return (
@@ -58,8 +62,24 @@ export default function Header(props) {
         <div className="nav-links" id="nav-links">
           <i className="fa fa-solid fa-xmark"></i>
           <ul>
-            <li><button onClick={togglePop} className="login-btn">LOGIN</button></li>
-            {seen ? <Login toggle={togglePop} setUser={handleUserData} /> : null}
+            {
+              user === null ? (
+                <>
+                  <li><button onClick={togglePop} className="login-btn">LOGIN</button></li>
+                  {seen ? <Login toggle={togglePop} User={handleUserData} /> : null}
+                </>
+              ) : (
+                <li>
+                  <NavLink
+                    to={"/Dashboard"}
+                    state={{ user: user }}
+                    className={({ isActive }) => isActive ? 'active' : ''}
+                  >
+                    <button className="login-btn">Dashboard</button>
+                  </NavLink>
+                </li>
+              )
+            }
             <li>
               <NavLink
                 to={"/"}

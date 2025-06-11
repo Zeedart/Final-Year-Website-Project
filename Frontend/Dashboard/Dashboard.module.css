@@ -166,11 +166,11 @@
     position: relative;
     height: 3.7rem;
     transition: all 300ms ease;
-    padding: 0 2rem;
+    padding: 0 1rem 0 0;
 }
 
 .navbar a:hover {
-    padding-top: 1.5rem;
+    padding-top: .9rem;
 }
 
 .navbar a.active {

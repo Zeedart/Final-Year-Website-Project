@@ -112,6 +112,7 @@ nav img {
   display: inline-block;
   padding: 8px 12px;
   position: relative;
+  font-size: 16px;
 }
 
 /* Default underline effect (for non-active links) */
@@ -211,6 +212,7 @@ nav img {
   color: #3e3e3e;
   font-weight: 600;
   font-family: "inter", sans-serif;
+  font-size: 20px;
 }
 
 /* ACCORDIAN VISION, GOAL, MESSEAGE*/
@@ -231,6 +233,17 @@ nav img {
   font-weight: 700;
 }
 
+.accordion-body p{
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.accordion-body ol li{
+  list-style :disc;
+  font-size: 20px;
+}
 
 .accordion-collapse {
   background-color: #f5f5f5;
@@ -313,6 +326,7 @@ nav img {
 .footer-location p {
   font-size: 20px;
   color: #ffffff;
+    text-align: left;
 }
 
 .footer-location a button {
@@ -698,6 +712,14 @@ h3 {
   margin: auto;
   text-align: center;
   padding-top: 50px;
+}
+
+.Major h1 {
+  font-size: 40px;
+}
+
+.Major p {
+  font-size: 20px;
 }
 
 .Major-col {

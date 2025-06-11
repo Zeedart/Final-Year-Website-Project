@@ -8,6 +8,7 @@ import NotFound from './NotFound.jsx'
 import GeologyDep from '../Departments/GeologyDep.jsx'
 import ComputerEngDep from '../Departments/ComputerEngDep.jsx'
 import SafetyDep from '../Departments/SafetyDep.jsx'
+import Dashboard from '../Dashboard/Dashboard.jsx'
 
 const router = createBrowserRouter([
   {path: "/", element: <App />},
@@ -16,10 +17,10 @@ const router = createBrowserRouter([
   {path: "*", element: <NotFound />},
   {path: "/Geology", element: <GeologyDep />},
   {path: "/ComputerEngineering", element: <ComputerEngDep/>},
-  {path: "/Safety", element: <SafetyDep />}
+  {path: "/Safety", element: <SafetyDep />},
+  {path: "/Dashboard", element: <Dashboard />}
   /* {path: "/Departments", element: <Departments />},
-  {path: "/News", element: <News />},
-  {path: "/Dashboard", element: <Dashboard />} */
+  {path: "/News", element: <News />}, */
 ])
 
 createRoot(document.getElementById('root')).render(

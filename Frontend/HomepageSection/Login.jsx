@@ -10,15 +10,14 @@ export default function Login(props) {
     function handleLogin(e) {
         e.preventDefault()
 
-        fetch(`http://localhost:8081/student/${id}&${nationalNumber}`)
+        fetch(`http://localhost:8081/student?id=${id}&national=${nationalNumber}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                props.setUser(data)  
-                props.toggle()      
+                console.log(data);
+                props.User(data);
+                props.toggle();
             })
-            .catch(err => console.log(err))
-
+            .catch(err => console.log(err));
     }
 
     return (

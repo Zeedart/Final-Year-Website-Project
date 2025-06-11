@@ -3,46 +3,49 @@ import styles from './Dashboard.module.css';
 import pfp from './images/pfp.png';
 import logo from '../HomepageSection/HomepageAssets/BSULogo.png';
 import { useEffect, useState } from 'react';
+import { useLocation } from "react-router-dom";
+import { Link, NavLink } from 'react-router-dom';
 
 const Dashboard = () => {
-  const [data, setData] = useState([])
+  const [marksData, setMarksData] = useState([])
   const [studentData, setStudentData] = useState([])
-  const StudentID = 212084
+  const location = useLocation();
+  const user = location.state?.user;
+  const StudentID = user[0].StudentID;
   const majors = {
     0: "Petroleum Geology Engineering",
     1: "Computer Engineering",
     2: "Occupational Safety and Health Engineering"
   }
 
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const marksRes = await fetch(`http://localhost:8081/marks/${StudentID}`);
-      const marksData = await marksRes.json();
-      setData(marksData);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const marksRes = await fetch(`http://localhost:8081/marks/${StudentID}`);
+        const marksData = await marksRes.json();
+        setMarksData(marksData);
 
-      const studentRes = await fetch(`http://localhost:8081/student/${StudentID}`);
-      const studentData = await studentRes.json();
-      setStudentData(studentData);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+        const studentRes = await fetch(`http://localhost:8081/student/${StudentID}`);
+        const studentData = await studentRes.json();
+        setStudentData(studentData);
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
-  fetchData();
-}, []);
+    fetchData();
+  }, []);
 
 
-  const statusStyle = studentData[0]?.Status === "Active" ? styles.statusActive : 
-                     studentData[0]?.Status === "Graduated"? styles.graduated: styles.statusInactive;
+  const statusStyle = studentData[0]?.Status === "Active" ? styles.statusActive :
+    studentData[0]?.Status === "Graduated" ? styles.graduated : styles.statusInactive;
   // ex:  {MarkID: 119, StudentID: 212084, SubjectID: 17, Semester: 1, AttemptNumber: 1, …}
-  
-  console.log(studentData)
+
   function ShowSubjects() {
     const groupedBySemester = {};
 
     // Group subjects by semester
-    data.forEach(subject => {
+    marksData.forEach(subject => {
       if (!groupedBySemester[subject.Semester]) {
         groupedBySemester[subject.Semester] = [];
       }
@@ -53,8 +56,8 @@ useEffect(() => {
       <>
         {Object.entries(groupedBySemester).map(([semester, subjects]) => (
           <div key={semester}>
-            <h1 style={{marginBottom: "2%"}}>Semester {semester}</h1>
-            <div className='arrange' style={{marginBottom: "5%"}}>
+            <h1 style={{ marginBottom: "2%" }}>Semester {semester}</h1>
+            <div className='arrange' style={{ marginBottom: "5%" }}>
               {subjects.map(({ SubjectID, SubjectName, SubjectCode, Mark }) => {
                 const progressClass =
                   Mark >= 75 ? "high" : Mark >= 50 ? "medium" : "low";
@@ -99,8 +102,11 @@ useEffect(() => {
         </div>
 
         <div className={styles.navbar}>
-          <a href="#home" className={styles.active}>
-            <h3>Home</h3>
+          <a className={styles.active}>
+            <NavLink
+              to={"/"}>
+              <h3>HOME</h3>
+            </NavLink>
           </a>
           <a href="#logout">
             <h3>Logout</h3>
