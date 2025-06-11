@@ -108,9 +108,6 @@ const Dashboard = () => {
               <h3>HOME</h3>
             </NavLink>
           </a>
-          <a href="#logout">
-            <h3>Logout</h3>
-          </a>
         </div>
 
       </header>

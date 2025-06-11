@@ -53,13 +53,23 @@ app.get("/subject/:Major", (req, res) => {
 });
 
 app.get("/marks/:StudentID", (req, res) => {
-    const StudentID = req.params.StudentID;           // get Major from URL
-    const sql = `SELECT s.SubjectID, s.SubjectCode, s.Name AS SubjectName, s.Semester, m.MarkID, m.StudentID, m.Mark, m.Passed, m.AttemptNumber FROM  subject s JOIN  marks m ON s.SubjectID = m.SubjectID WHERE  m.StudentID = ${StudentID}  -- Replace with your student ID ORDER BY  s.Semester, s.SubjectCode;`
-    db.query(sql, [StudentID], (err, data) => {   // pass majorId as parameter
+    const StudentID = req.params.StudentID;
+    const sql = `
+        SELECT 
+            s.SubjectID, s.SubjectCode, s.Name AS SubjectName, 
+            s.Semester, m.MarkID, m.StudentID, m.Mark, m.Passed, m.AttemptNumber 
+        FROM subject s 
+        JOIN marks m ON s.SubjectID = m.SubjectID 
+        WHERE m.StudentID = ? 
+        ORDER BY s.Semester, s.SubjectCode;
+    `;
+    
+    db.query(sql, [StudentID], (err, data) => {
         if (err) return res.json(err);
         return res.json(data);
     });
 });
+
 
 app.listen(8081, ()=> {
     console.log("Listening")
