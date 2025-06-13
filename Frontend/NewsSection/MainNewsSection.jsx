@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react"
-import Dashboard from '../Dashboard/Dashboard.jsx'
+import Portal from "../Reregistration_portal/Portal"
 
 export default function NewsSection(){
     const [data, setData] = useState([])
@@ -14,7 +14,7 @@ export default function NewsSection(){
 
 
     return (
-        <Dashboard />
+        <Portal />
     )
 
 }
