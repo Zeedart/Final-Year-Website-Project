@@ -7,6 +7,11 @@ const Portal = () => {
     const [studentData, setStudentData] = useState(null);
     const [isUpdating, setIsUpdating] = useState(false);
     const [message, setMessage] = useState('');
+    const Majors = {
+        0: "Petroleum Geology Engineering",
+        1: "Computer Engineering",
+        2: "Occupational Safety and Health Engineering"
+    }
 
     const handleActivation = async (e) => {
         e.preventDefault();
@@ -138,7 +143,7 @@ const Portal = () => {
                         <h3>Student Information</h3>
                         <p>Name: {studentData.Name}</p>
                         <p>Student ID: {studentData.StudentID}</p>
-                        <p>Major ID: {studentData.MajorID}</p>
+                        <p>Major ID: {Majors[studentData.MajorID]}</p>
                         <p>Current Semester: {studentData.CurrentSemester}</p>
                         <p>Status: {studentData.Status}</p>
                     </div>

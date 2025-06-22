@@ -3,8 +3,6 @@ import { useState, useEffect } from "react"
 export default function Login(props) {
     const [nationalNumber, setNationalNumber] = useState('')
     const [id, setId] = useState('')
-    const [userData, setUserData] = useState(null)
-    const [shouldFetch, setShouldFetch] = useState(false)
 
     console.log(nationalNumber, id)
     function handleLogin(e) {
@@ -19,7 +17,6 @@ export default function Login(props) {
             })
             .catch(err => console.log(err));
     }
-
     return (
         <div className="popup">
             <div className="popup-inner">

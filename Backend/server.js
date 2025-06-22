@@ -74,10 +74,10 @@ app.get("/marks/:StudentID", (req, res) => {
 
 
 app.post('/student/activate', (req, res) => {
-    // Ensure we always return JSON
+    // Ensure JSON response
     res.setHeader('Content-Type', 'application/json');
 
-    // 3. Better request validation
+    // Validate request body
     if (!req.body || Object.keys(req.body).length === 0) {
         return res.status(400).json({
             error: "Empty request body",
@@ -85,7 +85,7 @@ app.post('/student/activate', (req, res) => {
         });
     }
 
-    // 4. Safe destructuring with defaults
+    // Destructure with defaults
     const { studentId, nationalId } = req.body || {};
 
     if (!studentId || !nationalId) {
@@ -99,31 +99,88 @@ app.post('/student/activate', (req, res) => {
         });
     }
 
-    // 5. Database operation
-    const sql = "UPDATE student SET Status = 'Active' WHERE StudentID = ? AND National_ID = ?";
-    db.query(sql, [studentId, nationalId], (err, result) => {
-        if (err) {
-            console.error('Database error:', err);
+    // First check the student's current status
+    const checkSql = `
+        SELECT Status 
+        FROM student 
+        WHERE StudentID = ? 
+          AND National_ID = ?
+    `;
+
+    db.query(checkSql, [studentId, nationalId], (checkErr, checkResult) => {
+        if (checkErr) {
+            console.error('Database error:', checkErr);
             return res.status(500).json({
-                error: "Database operation failed",
-                details: err.message
+                error: "Database verification failed",
+                details: checkErr.message
             });
         }
 
-        if (result.affectedRows === 0) {
+        if (checkResult.length === 0) {
+            // Student doesn't exist
             return res.status(404).json({
                 error: "No matching student found",
                 suggestion: "Verify StudentID and National_ID combination"
             });
         }
 
-        res.json({
-            success: true,
-            message: "Student activated successfully",
-            studentId,
-            nationalId,
-            status: "Active"
-        });
+        const currentStatus = checkResult[0].Status;
+
+        if (currentStatus === 'Suspended') {
+            return res.status(403).json({
+                error: "Cannot activate a suspended student",
+                solution: "Contact administrator to resolve suspension"
+            });
+        }
+
+        if (currentStatus === 'Active') {
+            return res.status(400).json({
+                error: "Student is already active",
+                currentStatus: currentStatus
+            });
+        }
+
+        // Only proceed if status is 'Inactive'
+        if (currentStatus === 'Inactive') {
+            const updateSql = `
+                UPDATE student 
+                SET Status = 'Active' 
+                WHERE StudentID = ? 
+                  AND National_ID = ? 
+                  AND Status = 'Inactive'
+            `;
+
+            db.query(updateSql, [studentId, nationalId], (err, result) => {
+                if (err) {
+                    console.error('Database error:', err);
+                    return res.status(500).json({
+                        error: "Database operation failed",
+                        details: err.message
+                    });
+                }
+
+                if (result.affectedRows > 0) {
+                    return res.json({
+                        success: true,
+                        message: "Student activated successfully",
+                        studentId,
+                        nationalId,
+                        status: "Active"
+                    });
+                } else {
+                    return res.status(400).json({
+                        error: "Activation failed",
+                        details: "Student status may have changed during processing"
+                    });
+                }
+            });
+        } else {
+            return res.status(400).json({
+                error: "Unexpected student status",
+                currentStatus: currentStatus,
+                expected: "Inactive"
+            });
+        }
     });
 });
 
