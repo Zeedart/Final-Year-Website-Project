@@ -228,7 +228,11 @@
 }
 
 .about h5 {
-    font-size: 15px;
+    font-size: 20px;
+}
+
+.about h5:last-of-type {
+    margin-bottom: 20px;
 }
 
 
@@ -257,7 +261,7 @@
     text-align: center;
     font-weight: 700;
     font-size: 15px;
-    
+
 }
 
 
@@ -301,12 +305,13 @@
     padding: 2rem;
     width: 290px;
 }
+
 .subjectCard small {
     font-size: 16px;
 }
 
 .arrange {
-        margin-bottom: 10%;
+    margin-bottom: 10%;
 }
 
 .subjects div {
@@ -471,56 +476,61 @@
     padding-left: 1.5rem;
 }
 
-.right .announcements h2 {
-    margin-bottom: .8rem;
-}
-
-.right .announcements .updates {
-    background-color: var(--color-white);
-    padding: var(--card-padding);
-    border-radius: var(--card-border-radius);
-    box-shadow: var(--box-shadow);
-    transition: all 300ms ease;
-}
-
-.right .announcements .updates:hover {
-    box-shadow: none;
-}
-
-.right .announcements .updates .message {
-    gap: 1rem;
-    line-height: 1.5;
-    padding: .5rem 0;
-}
-
-/* Teachers on leave  */
-.right .leaves {
-    margin-top: 2rem;
-}
-
-.right .leaves h2 {
-    margin-bottom: .8rem;
-}
-
-.right .leaves .teacher {
-    background: var(--color-white);
+.newsCard {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: .7rem;
-    padding: 1.4rem var(--card-padding);
-    border-radius: var(--border-radius-2);
-    transition: all 300ms ease;
+  flex-direction: column;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newsCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.updates {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.message {
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    padding: 20px;
     box-shadow: var(--box-shadow);
 }
 
-.right .profile-photo {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    overflow: hidden;
+.message p {
+    direction: rtl;
+    text-align: right;
+    font-size: 20px;
 }
 
-.right .leaves .teacher:hover {
-    box-shadow: none;
+.message small {
+    font-size: 15px;
+}
+
+
+.portalBtn {
+    text-decoration: none;
+    background-color: #FFD700;
+    border-radius: 1rem;
+    padding: 5% 25%;
+    font-size: 20px;
+    border: none;
+    color: black;
+    font-weight: 600;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.portalBtn:hover {
+    background-color: #6A0DAD;
+    color: white;
+    border: 3px dashed #FFD700;
 }

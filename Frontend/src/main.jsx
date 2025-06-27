@@ -9,6 +9,7 @@ import GeologyDep from '../Departments/GeologyDep.jsx'
 import ComputerEngDep from '../Departments/ComputerEngDep.jsx'
 import SafetyDep from '../Departments/SafetyDep.jsx'
 import Dashboard from '../Dashboard/Dashboard.jsx'
+import Portal from '../Reregistration_portal/Portal.jsx'
 
 const router = createBrowserRouter([
   {path: "/", element: <App />},
@@ -18,7 +19,8 @@ const router = createBrowserRouter([
   {path: "/Geology", element: <GeologyDep />},
   {path: "/ComputerEngineering", element: <ComputerEngDep/>},
   {path: "/Safety", element: <SafetyDep />},
-  {path: "/Dashboard", element: <Dashboard />}
+  {path: "/Dashboard", element: <Dashboard />},
+  {path: "/Registration", element: <Portal />}
   /* {path: "/Departments", element: <Departments />},
   {path: "/News", element: <News />}, */
 ])

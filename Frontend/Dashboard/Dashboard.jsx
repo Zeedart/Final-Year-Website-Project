@@ -9,6 +9,7 @@ import { Link, NavLink } from 'react-router-dom';
 const Dashboard = () => {
   const [marksData, setMarksData] = useState([])
   const [studentData, setStudentData] = useState([])
+  const [articles, setArticles] = useState([]);
   const location = useLocation();
   const user = location.state?.user;
   const StudentID = user[0].StudentID;
@@ -17,6 +18,34 @@ const Dashboard = () => {
     1: "Computer Engineering",
     2: "Occupational Safety and Health Engineering"
   }
+  const registration = true
+
+  function getTimeAgo(dateString) {
+    const now = new Date();
+    const then = new Date(dateString);
+    const diffInSeconds = Math.floor((now - then) / 1000);
+
+    const units = [
+      { name: 'year', seconds: 31536000 },
+      { name: 'month', seconds: 2592000 },
+      { name: 'day', seconds: 86400 },
+      { name: 'hour', seconds: 3600 },
+      { name: 'minute', seconds: 60 },
+      { name: 'second', seconds: 1 },
+    ];
+
+    for (let unit of units) {
+      const value = Math.floor(diffInSeconds / unit.seconds);
+      if (value > 0) {
+        return new Intl.RelativeTimeFormat('en', { numeric: 'auto' }).format(-value, unit.name);
+      }
+    }
+
+    return "just now";
+  }
+
+  console.log(getTimeAgo("2025-06-25T07:15:35.000Z")); // e.g. "2 days ago"
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,6 +53,10 @@ const Dashboard = () => {
         const marksRes = await fetch(`http://localhost:8081/marks/${StudentID}`);
         const marksData = await marksRes.json();
         setMarksData(marksData);
+
+        const newsRes = await fetch("https://rss.app/feeds/v1.1/LTrBWtIpkngakweV.json");
+        const newsData = await newsRes.json();
+        setArticles(newsData.items)
 
         const studentRes = await fetch(`http://localhost:8081/student/${StudentID}`);
         const studentData = await studentRes.json();
@@ -129,6 +162,10 @@ const Dashboard = () => {
             <p>{studentData[0]?.CurrentSemester}</p>
             <h5>Status</h5>
             <p className={statusStyle}>{studentData[0]?.Status}</p>
+            {registration && <><h5>🌟Register Now🌟</h5>
+              <NavLink className={styles.portalBtn} to="/Registration">
+                Register
+              </NavLink></>}
           </div>
         </div>
       </aside>
@@ -144,11 +181,20 @@ const Dashboard = () => {
         <div className={styles.announcements}>
           <h2>Announcements</h2>
           <div className={styles.updates}>
-            <div className={styles.message}>
-              <p><b>Academic</b> Summer training internship with Live Projects.</p>
-              <small className={styles.textMuted}>2 Minutes Ago</small>
-            </div>
-            {/* Add other announcements here */}
+
+            {articles.slice(0, 5).map((item, index) => (
+              <a
+                key={index}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.newsCard}
+              ><div src={item.url} key={index} className={styles.message}>
+                  <p>{item.title.slice(0, 100)}...</p>
+                  <small className={styles.textMuted}>{getTimeAgo(item.date_published.slice(0, 10))}</small>
+                </div></a>
+            ))}
+
           </div>
         </div>
       </div>

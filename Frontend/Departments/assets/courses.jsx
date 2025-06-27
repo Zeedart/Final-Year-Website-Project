@@ -36,5 +36,4 @@ export default function courses({ department }) {
             ))}
         </div>
     );
-
 }
