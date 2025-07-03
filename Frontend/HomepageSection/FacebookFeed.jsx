@@ -38,7 +38,7 @@ function FacebookNewsFeed() {
                         />
 
                         <div className="below-pic">
-                            <h2 className="feed-title">{post.title.slice(0, 90)}...</h2>
+                            <h2 className="feed-title">{post.title.slice(0, 127)}...</h2>
                             <p className="feed-description">
                                 {post.content_text.slice(0, 150)}...
                             </p>
