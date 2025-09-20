@@ -123,19 +123,27 @@ const Portal = () => {
                 {message && (
                     <div
                         className={`message ${!studentData
-                                ? "Error"
-                                : studentData.Status === "Active"
-                                    ? "Active"
-                                    : studentData.Status === "Graduated"
-                                        ? "Graduated"
-                                        : studentData.Status === "Suspended"
-                                            ? "Suspended"
-                                            : ""
+                            ? "Error"
+                            : studentData.Status === "Active"
+                                ? "Active"
+                                : studentData.Status === "Graduated"
+                                    ? "Graduated"
+                                    : studentData.Status === "Suspended"
+                                        ? "Suspended"
+                                        : ""
                             }`}
                     >
                         {message}
                     </div>
                 )}
+
+                <div
+                    className={`semester`}
+                >
+                    Pay the fee after 2 Weeks of semester starting!
+                </div>
+
+
 
 
                 {studentData && (
