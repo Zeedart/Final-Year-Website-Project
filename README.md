@@ -1,7 +1,7 @@
 # 📘 Final Year Website Project  
 
 ## 📌 Overview  
-This project is my **Final Year University Website System**, built to manage student, professor, and subject data while allowing students to check their marks and academic progress. It integrates both **Frontend (React)** and **Backend (Node.js/SQL)**, following a clean separation of concerns and real-world software engineering practices.  
+This project is my **Final Year University Website System**, built to manage student and subject data while allowing students to check their marks and academic progress. It integrates both **Frontend (React)** and **Backend (Node.js/SQL)**, following a clean separation of concerns and real-world software engineering practices.  
 
 The goal of this system is to provide a **modern, responsive, and efficient web application** that demonstrates skills in **React, Web Development, and Database Management**.  
 
@@ -28,7 +28,6 @@ The goal of this system is to provide a **modern, responsive, and efficient web 
 - 👨‍🏫 **Professor Input:** Marks are uploaded, verified, and synced to the system.  
 - 🔍 **Search & Filter:** Quickly find students or subjects.  
 - 📱 **Responsive UI:** Works on desktop and mobile devices.  
-
 ---
 
 ## 🚀 Getting Started  
